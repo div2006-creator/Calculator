@@ -1,0 +1,179 @@
+:root {
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  --btn-num-bg: #f8fafc;
+  --btn-num-hover: #f1f5f9;
+  --btn-num-text: #0f172a;
+
+  --btn-action-bg: #e2e8f0;
+  --btn-action-hover: #cbd5e1;
+  --btn-action-text: #334155;
+
+  --btn-danger-bg: #fee2e2;
+  --btn-danger-hover: #fecaca;
+  --btn-danger-text: #dc2626;
+
+  --btn-op-bg: #e0e7ff;
+  --btn-op-hover: #c7d2fe;
+  --btn-op-text: #4338ca;
+
+  --btn-sci-bg: #e0f2fe;
+  --btn-sci-hover: #bae6fd;
+  --btn-sci-text: #0284c7;
+
+  --btn-equals-bg: #4f46e5;
+  --btn-equals-hover: #4338ca;
+  --btn-equals-text: #ffffff;
+
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.calculator-card {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.calc-display-section {
+  background: #f8fafc;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100px;
+  word-break: break-all;
+  overflow-x: auto;
+}
+
+.expression-line {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  min-height: 20px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.result-line {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.btn {
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.num-btn {
+  background: var(--btn-num-bg);
+  color: var(--btn-num-text);
+}
+
+.num-btn:hover {
+  background: var(--btn-num-hover);
+}
+
+.zero-btn {
+  grid-column: span 2;
+}
+
+.action-btn {
+  background: var(--btn-action-bg);
+  color: var(--btn-action-text);
+  font-size: 1rem;
+}
+
+.action-btn:hover {
+  background: var(--btn-action-hover);
+}
+
+.action-btn.danger {
+  background: var(--btn-danger-bg);
+  color: var(--btn-danger-text);
+  border-color: #fca5a5;
+}
+
+.action-btn.danger:hover {
+  background: var(--btn-danger-hover);
+}
+
+.op-btn {
+  background: var(--btn-op-bg);
+  color: var(--btn-op-text);
+  font-size: 1.3rem;
+  border-color: #c7d2fe;
+}
+
+.op-btn:hover {
+  background: var(--btn-op-hover);
+}
+
+.equals-btn {
+  background: var(--btn-equals-bg);
+  color: var(--btn-equals-text);
+  font-size: 1.5rem;
+  border: none;
+  grid-row: span 2;
+  height: 100%;
+}
+
+.equals-btn:hover {
+  background: var(--btn-equals-hover);
+}
